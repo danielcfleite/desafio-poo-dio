@@ -1,24 +1,18 @@
 package br.dev.danielcarvalho.desafio.dominio;
 
-public class Curso {
-    private String titulo;
-    private String descricao;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Curso extends Conteudo{
     private int cargaHoraria;
+    private List<Modulo> moduloList = new ArrayList<>();
 
-    public String getTitulo() {
-        return titulo;
+    public Curso(String titulo, String descricao){
+        super(titulo, descricao);
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public List<Modulo> getModulos(){
+        return moduloList;
     }
 
     public int getCargaHoraria() {
@@ -29,12 +23,13 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
     }
 
-    @Override
-    public String toString() {
-        return "Curso{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", cargaHoraria=" + cargaHoraria +
-                '}';
+    public List<Modulo> getModuloList() {
+        return moduloList;
     }
+
+    public void setModuloList(List<Modulo> moduloList) {
+        this.moduloList = moduloList;
+    }
+
+
 }
